@@ -1,4 +1,3 @@
-# zad1
 def nwd(a: int, b: int) -> int:
     if b == 0:
         return a
@@ -46,14 +45,14 @@ class Wymierna(object):
         return float(self.p/self.q)
 
     def __add__(self, other):
-        iloMianowniku = self.q * other.q
-        if iloMianowniku < 0:
-            iloMianowniku = -iloMianowniku
+        Mianownik = self.q * other.q
+        if Mianownik < 0:
+            Mianownik = -Mianownik
 
-        self.p *= int(iloMianowniku / self.q)
-        other.p *= int(iloMianowniku / other.q)
+        self.p *= int(Mianownik / self.q)
+        other.p *= int(Mianownik / other.q)
 
-        return Wymierna(self.p + other.p, iloMianowniku)
+        return Wymierna(self.p + other.p, Mianownik)
 
     def __sub__(self, other):
         return self + Wymierna(-other.p, other.q)
@@ -102,8 +101,8 @@ class Wymierna(object):
 
 
 
-liczba = Wymierna(1, 4)
-liczba2 = Wymierna(3, 5)
+liczba = Wymierna(3, 5)
+liczba2 = Wymierna(7, 8)
 print(liczba.get_licznik())
 print(liczba.get_mianownik())
 print(str(liczba))
